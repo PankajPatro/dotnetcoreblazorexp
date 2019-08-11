@@ -1,0 +1,8 @@
+html, body{
+    width: 99%;
+    height: 99%;
+}
+
+.no-padding{
+    padding : 0 !important;
+}
