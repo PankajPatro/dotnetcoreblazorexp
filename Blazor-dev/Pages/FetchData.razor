@@ -1,6 +1,7 @@
 ﻿@page "/fetchdata"
 @using WebApplication1.Data
 @inject WeatherForecastService ForecastService
+@inject WebApplication1.Data.ViewDataService ViewDataService
 
 <h1>Weather forecast</h1>
 
@@ -38,8 +39,14 @@ else
 @code {
     WeatherForecast[] forecasts;
 
-    protected override async Task OnInitAsync()
+    protected override async Task OnInitializedAsync()
     {
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        ViewDataService.Caption = "Fetch Data";
     }
 }

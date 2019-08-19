@@ -30,6 +30,7 @@ namespace WebApplication1
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<ViewDataService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

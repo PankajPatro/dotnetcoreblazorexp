@@ -1,32 +1,30 @@
 ﻿@inherits LayoutComponentBase
+@inject WebApplication1.Data.ViewDataService ViewDataService
 
- 
- <MatAppBarContainer>
-        <MatAppBar Fixed="true">
-            <MatAppBarRow>
-                <MatAppBarSection>
-                    <MatIconButton Icon="menu" OnClick="@((e) => ButtonClicked())"></MatIconButton>
-                    <MatAppBarTitle>MatBlazor - Material Design components for Blazor</MatAppBarTitle>
-                </MatAppBarSection>
-                <MatAppBarSection Align="@MatAppBarSectionAlign.End">
-                    <MatIconButton Icon="favorite"></MatIconButton>
-                </MatAppBarSection>
-            </MatAppBarRow>
-        </MatAppBar>
-       <MatAppBarContent>
-            <MatDrawerContainer Style="width: 100vw; height: 100vh;">
-    <MatDrawer @bind-Opened="@Opened">
-    <NavMenu></NavMenu>
-    </MatDrawer>
-    <MatDrawerContent>
-        @Body
-       
-    </MatDrawerContent>
-</MatDrawerContainer>
-            
-        </MatAppBarContent>
-    </MatAppBarContainer>
 
+<MatAppBarContainer>
+    <MatAppBar Fixed="true" Style="z-index:99">
+        <MatAppBarRow>
+            <MatAppBarSection>
+                <MatIconButton Icon="menu" OnClick="@((e) => ButtonClicked())"></MatIconButton>
+                <MatAppBarTitle>@ViewDataService.Caption</MatAppBarTitle>
+            </MatAppBarSection>
+            <MatAppBarSection Align="@MatAppBarSectionAlign.End">
+                <MatIconButton Icon="search"></MatIconButton>
+            </MatAppBarSection>
+        </MatAppBarRow>
+    </MatAppBar>
+    <MatAppBarContent>
+        <MatDrawerContainer Style="height: 95vh;">
+            <MatDrawer @bind-Opened="@Opened">
+                <NavMenu></NavMenu>
+            </MatDrawer>
+            <MatDrawerContent>
+                @Body
+            </MatDrawerContent>
+        </MatDrawerContainer>
+    </MatAppBarContent>
+</MatAppBarContainer>
 
 
 @functions
