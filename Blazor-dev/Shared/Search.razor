@@ -1,0 +1,18 @@
+﻿<p>
+    <MatTextField @bind-Value="@SearchStr" Label="Search" Icon="search" IconTrailing="true"></MatTextField>
+</p>
+@functions
+{
+
+    public string SearchStr
+    {
+        get => _searchString;
+        set
+        {
+            _searchString = value;
+            this.StateHasChanged();
+        }
+    }
+
+    private string _searchString;
+}

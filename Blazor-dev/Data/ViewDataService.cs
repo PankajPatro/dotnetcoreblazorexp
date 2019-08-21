@@ -1,8 +1,10 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication1.Data
 {
+    [Authorize]
     public class ViewDataService : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

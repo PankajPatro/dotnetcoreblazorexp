@@ -2,11 +2,15 @@
 
 @inject WebApplication1.Data.ViewDataService ViewDataService
 
-<div>
-    <h1>Hello, world!</h1>
+<AuthorizeView>
+    <Authorized>
+        <div>
+            <h1>Hello, world!</h1>
 
-    Welcome to your new app...
-</div>
+            Welcome to your new app...
+        </div>
+    </Authorized>
+</AuthorizeView>
 
 @code{
     protected override void OnInitialized()

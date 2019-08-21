@@ -1,11 +1,16 @@
 ﻿@page "/counter"
 @inject WebApplication1.Data.ViewDataService ViewDataService
 
-<h1>Counter</h1>
+<AuthorizeView>
+    <Authorized>
+        <h1>Counter</h1>
 
-<p>Current count: @currentCount</p>
+        <p>Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+        <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    </Authorized>
+</AuthorizeView>
+
 
 @code {
     int currentCount = 0;
