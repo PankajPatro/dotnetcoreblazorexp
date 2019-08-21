@@ -1,3 +1,4 @@
 #dotnetblazorexperiment
 
-With Dotnet Core 3.0 in preview and support for VS code, I belive this should now be started again. Will start by downloading the 3.0 preview sdk and see how it goes in ubuntu. Will keep updating.
+The blazor code is shaping pretty good. Have started integrating with https://www.matblazor.com 
+The next step is to authenticate with firebase console and see how it shapes
